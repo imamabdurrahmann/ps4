@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* ==========================================================================
+   CLASSIC ELEGANT BLACK & WHITE MONOCHROME THEME
+   Imam x Playbox PS4 / PS5 Exploit Host
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #070709;
+    background-image: 
+        radial-gradient(circle at 50% 12%, rgba(255, 255, 255, 0.06) 0%, transparent 55%),
+        radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+        linear-gradient(180deg, #0d0d10 0%, #050506 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 30px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Subtle ambient vignette glow overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.65) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.title-container,
+header,
+.container,
+#menu,
+#crypto {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY & BRANDING
+   ========================================================================== */
+
+h1 {
+    font-family: 'Cinzel', 'Playfair Display', 'Times New Roman', Georgia, serif;
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Title & Header Section */
+.title-container,
+header {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.main-title {
+    font-family: 'Cinzel', 'Playfair Display', 'Times New Roman', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin: 0 auto 12px;
+}
+
+/* Metallic Platinum Shimmer for Title */
+.name-imam {
+    display: block;
+    font-family: 'Cinzel', 'Playfair Display', 'Times New Roman', Georgia, serif;
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e2e5 25%, #a1a1aa 50%, #ffffff 75%, #d1d1d6 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: silverShine 6s ease-in-out infinite;
+    filter: drop-shadow(0 4px 18px rgba(255, 255, 255, 0.22));
+    margin-bottom: 8px;
+}
+
+@keyframes silverShine {
+    0% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+    100% { background-position: 0% center; }
+}
+
+/* Classic Monochrome Badges for PS4 & PS5 */
+.ps4-title, 
+.ps5-title {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 4px;
+    padding: 4px 18px;
+    margin: 8px 6px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
+
+.ps4-title:hover, 
+.ps5-title:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    color: #8e8e93;
+    letter-spacing: 9px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.version-badge {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f4f4f5;
+    padding: 6px 22px;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    margin: 10px 0 20px;
+}
+
+/* ==========================================================================
+   DIVIDERS & SEPARATORS
+   ========================================================================== */
+
+hr, 
+.separator {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    margin: 24px auto;
+    width: 60%;
+    max-width: 440px;
+}
+
+/* ==========================================================================
+   CARDS & CONTAINERS
+   ========================================================================== */
+
+.container,
+#menu,
+#crypto {
+    display: block;
+    max-width: 580px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 38px 32px;
+    background: rgba(16, 16, 20, 0.72);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 
+                0 0 0 1px rgba(255, 255, 255, 0.03),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+#tools, #lnx, #mods {
+    display: none;
+}
+
+.container #menu {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 10px 0;
+    margin: 10px auto 20px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.host-title {
+    font-family: 'Cinzel', 'Playfair Display', 'Times New Roman', Georgia, serif;
+    font-size: 1.3rem;
+    color: #ffffff !important;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+/* Standard Buttons */
+.btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: #f4f4f5;
+    width: 280px;
+    height: 50px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin: 8px 6px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.btn:hover {
+    background: #ffffff;
+    color: #08080a !important;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.22);
+}
+
+.btn-icon {
+    display: inline-block;
+    margin: 0 6px;
+    font-weight: 700;
+}
+
+.btn-onln {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.28);
+}
+
+.btn-onln:hover {
+    background: #ffffff;
+    color: #08080a !important;
+}
+
+/* Main GoldHEN Launcher Button */
+.btn.btn-goldhen,
+.btn-goldhen {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 420px;
+    height: 60px;
+    padding: 0 24px;
+    font-family: 'Cinzel', 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background: linear-gradient(180deg, #ffffff 0%, #ececed 100%);
+    color: #08080a !important;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.14), 0 4px 12px rgba(0, 0, 0, 0.7);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    outline: none;
+}
+
+.btn.btn-goldhen:hover,
+.btn-goldhen:hover {
+    background: #08080a;
+    color: #ffffff !important;
+    border-color: #ffffff;
+    box-shadow: 0 14px 40px rgba(255, 255, 255, 0.28), 0 0 25px rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.btn.btn-goldhen .btn-icon,
+.btn-goldhen .btn-icon {
+    display: inline-block;
+    margin: 0 8px;
+    font-weight: 800;
+    color: #08080a;
+    transition: color 0.35s ease;
+}
+
+.btn.btn-goldhen:hover .btn-icon,
+.btn-goldhen:hover .btn-icon {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   STATUS & MESSAGES
+   ========================================================================== */
+
+.status-bar {
+    margin: 25px auto;
+}
+
+#msgs, 
+.status-text {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #f4f4f5 !important;
+    padding: 16px 28px;
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+h1#msgs {
+    font-size: 1.05rem;
+    margin: 25px auto;
+}
+
+#msgs.loading, 
+.status-text.loading {
+    border-color: rgba(255, 255, 255, 0.35);
+    animation: statusPulse 2.4s ease-in-out infinite;
+}
+
+#msgs.success, 
+.status-text.success {
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.25) !important;
+}
+
+#msgs.error, 
+.status-text.error {
+    border-color: rgba(255, 80, 80, 0.5) !important;
+    color: #ff8888 !important;
+    background: rgba(255, 0, 0, 0.06) !important;
+}
+
+#msgs.error span {
+    color: #ff8888 !important;
+}
+
+@keyframes statusPulse {
+    0%, 100% {
+        border-color: rgba(255, 255, 255, 0.18);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+    50% {
+        border-color: rgba(255, 255, 255, 0.55);
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+}
+
+#progress {
+    display: block;
+    width: 70%;
+    margin: 25px auto;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   FOOTER & CREDITS
+   ========================================================================== */
+
+footer, 
+.footer-section {
+    margin-top: 32px;
+}
+
+.credit {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: #a1a1aa;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+}
+
+.credit-link {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.credit-link:hover {
+    border-bottom-color: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.thanks {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: #71717a;
+    margin-top: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .container, #menu, #crypto {
+        padding: 26px 18px;
+    }
+
+    .btn, .btn-goldhen {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .main-title {
+        font-size: 1.6rem;
+    }
+    
+    .name-imam {
+        font-size: 2.2rem;
+        letter-spacing: 5px;
+    }
+    
+    .ps4-title, .ps5-title {
+        font-size: 0.95rem;
+        padding: 4px 12px;
+    }
+
+    #msgs, .status-text {
+        font-size: 0.9rem;
+        padding: 12px 18px;
+    }
+}
