@@ -1,10 +1,29 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imam x Playbox PS4 Exploit Host</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var ua = navigator.userAgent;
+            var match = ua.match(/PlayStation 4[ /]([\d.]+)/i);
+            var devText = document.getElementById("detected-text");
+            var devBox = document.getElementById("device-info");
+            
+            if (match) {
+                var fw = match[1];
+                devText.innerHTML = "🎮 Console Detected: PlayStation 4 (Firmware " + fw + ")";
+                devText.style.color = "#00ffcc";
+                devBox.style.borderColor = "rgba(0, 255, 204, 0.5)";
+            } else {
+                devText.innerHTML = "💻 Device Detected: PC / Laptop (Preview Mode)";
+                devText.style.color = "#ffd700";
+                devBox.style.borderColor = "rgba(255, 215, 0, 0.4)";
+            }
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -17,18 +36,21 @@
             <div class="version-badge">FW 7.00 - 13.00</div>
         </header>
         
+                <div id="device-info" style="display: inline-block; background: rgba(0, 0, 0, 0.45); border: 1px solid rgba(255, 215, 0, 0.35); border-radius: 20px; padding: 7px 22px; font-size: 15px; margin: 10px auto 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); backdrop-filter: blur(5px);">
+            <span id="detected-text" style="color: #ffd700; font-weight: 600;">Detecting device...</span>
+        </div>
         <hr class="separator">
         
         <div id="menu">
             <h1 class="host-title">GoldHEN Exploit Host</h1>
             
-            <button class="btn btn-goldhen" onclick="location.replace('ran/index.html')">
+            <button class="btn btn-goldhen" onclick="location.href='ran/index.html'">
                 <span class="btn-icon">»</span> GoldHEN 7.00 - 13.00 <span class="btn-icon">«</span>
             </button>
         </div>
         
         <footer>
-            <p class="credit">Designed by <a href="#" class="credit-link">Imam x Playbox</a></p>
+            <p class="credit">Designed by <a href="#" class="credit-link">imamabdurrahman</a></p>
             <p class="thanks">A special thanks to all the devs on the scene.</p>
         </footer>
     </div>
