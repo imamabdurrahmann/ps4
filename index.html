@@ -6,23 +6,26 @@
     <title>Imam x Playbox PS4 Exploit Host</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        function detectDevice() {
             var ua = navigator.userAgent;
             var match = ua.match(/PlayStation 4[ /]([\d.]+)/i);
             var devText = document.getElementById("detected-text");
             var devBox = document.getElementById("device-info");
             
-            if (match) {
-                var fw = match[1];
-                devText.innerHTML = "🎮 Console Detected: PlayStation 4 (Firmware " + fw + ")";
-                devText.style.color = "#00ffcc";
-                devBox.style.borderColor = "rgba(0, 255, 204, 0.5)";
-            } else {
-                devText.innerHTML = "💻 Device Detected: PC / Laptop (Preview Mode)";
-                devText.style.color = "#ffd700";
-                devBox.style.borderColor = "rgba(255, 215, 0, 0.4)";
+            if (devText && devBox) {
+                if (match) {
+                    var fw = match[1];
+                    devText.innerHTML = "&#127918; Console Detected: PlayStation 4 (Firmware " + fw + ")";
+                    devText.style.color = "#00ffcc";
+                    devBox.style.borderColor = "rgba(0, 255, 204, 0.5)";
+                } else {
+                    devText.innerHTML = "&#128187; Device Detected: PC / Laptop (Preview Mode)";
+                    devText.style.color = "#ffd700";
+                    devBox.style.borderColor = "rgba(255, 215, 0, 0.4)";
+                }
             }
-        });
+        }
+        document.addEventListener("DOMContentLoaded", detectDevice);
     </script>
 </head>
 <body>
